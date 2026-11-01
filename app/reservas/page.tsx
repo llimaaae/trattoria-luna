@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -34,6 +34,11 @@ export default function ReservationPage() {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [minDate, setMinDate] = useState("");
+
+  useEffect(() => {
+    setMinDate(new Date().toISOString().split("T")[0]);
+  }, []);
 
   const timeSlots = [
     "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30"
@@ -279,7 +284,7 @@ export default function ReservationPage() {
                   name="date"
                   value={formData.date}
                   onChange={handleChange}
-                  min={new Date().toISOString().split("T")[0]}
+                  min={minDate}
                   className={`w-full px-4 py-3 rounded-md border ${
                     errors.date ? "border-red-500" : "border-charcoal/20"
                   } focus:outline-none focus:ring-2 focus:ring-terracotta focus:border-transparent transition-smooth`}

@@ -1,74 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --terracotta: #C1502E;
-  --cream: #F5F1E8;
-  --olive: #6B7446;
-  --gold: #D4A574;
-  --charcoal: #2D2D2D;
-  --white: #FFFFFF;
+@theme {
+  --color-terracotta: #C1502E;
+  --color-cream: #F5F1E8;
+  --color-olive: #6B7446;
+  --color-gold: #D4A574;
+  --color-charcoal: #2D2D2D;
+  
+  --font-family-display: var(--font-playfair), serif;
+  --font-family-sans: var(--font-inter), sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
-  body {
-    @apply bg-cream text-charcoal;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
-  }
 }
 
-@layer utilities {
-  .font-display {
-    font-family: var(--font-playfair), serif;
-  }
-
-  .font-sans {
-    font-family: var(--font-inter), sans-serif;
-  }
-
-  .text-terracotta {
-    color: var(--terracotta);
-  }
-
-  .bg-terracotta {
-    background-color: var(--terracotta);
-  }
-
-  .text-olive {
-    color: var(--olive);
-  }
-
-  .bg-olive {
-    background-color: var(--olive);
-  }
-
-  .text-gold {
-    color: var(--gold);
-  }
-
-  .bg-gold {
-    background-color: var(--gold);
-  }
-
-  .text-charcoal {
-    color: var(--charcoal);
-  }
-
-  .bg-cream {
-    background-color: var(--cream);
-  }
-
-  .transition-smooth {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+@utility transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Prefers reduced motion */

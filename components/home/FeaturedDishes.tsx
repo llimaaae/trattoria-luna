@@ -88,7 +88,6 @@ export default function FeaturedDishes() {
               className="group bg-cream rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-smooth"
             >
               <div className="relative h-64 bg-gradient-to-br from-terracotta/10 to-olive/10 overflow-hidden">
-                <div className="absolute inset-0 bg-[url('{dish.image}')] bg-cover bg-center opacity-0" />
                 <div className="absolute top-4 right-4 space-y-2">
                   {dish.dietary.map((tag) => (
                     <span

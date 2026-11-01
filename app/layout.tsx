@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://trattoria-luna.vercel.app",
     siteName: "Trattoria Luna",
     locale: "pt_BR",
-    type: "restaurant.restaurant",
+    type: "website",
     images: [
       {
         url: "/opengraph-image.png",

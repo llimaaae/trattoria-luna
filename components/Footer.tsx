@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -41,6 +44,12 @@ const SocialIcon = ({ icon }: { icon: string }) => {
 };
 
 export default function Footer() {
+  const [year, setYear] = useState(2026);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-charcoal text-cream" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -119,7 +128,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-cream/10 pt-8">
           <p className="text-xs text-cream/60 text-center">
-            &copy; {new Date().getFullYear()} Trattoria Luna. Todos os direitos reservados.
+            &copy; {year} Trattoria Luna. Todos os direitos reservados.
           </p>
         </div>
       </div>

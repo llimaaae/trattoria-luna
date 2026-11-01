@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trattoria Luna 🍝
 
-## Getting Started
+Site de portfólio para um restaurante italiano fictício — sabores que atravessam gerações.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, Turbopack, Cache Components)
+- **TypeScript**
+- **Tailwind CSS v4** (`@theme` no CSS global)
+- **Framer Motion** (animações)
+- **sharp** (otimização de imagens WebP)
+- **Playwright** (testes E2E + screenshots)
+
+## Como rodar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # build de produção (Turbopack)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Testes + screenshots (precisa `npm run dev` rodando):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+node scripts/screenshots.mjs   # salva em /screenshots (360px e 1280px)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Variáveis de ambiente
 
-## Learn More
+Copie `.env.example` para `.env.local`. Na Vercel, configure em **Settings > Environment Variables** e faça **redeploy** depois de adicionar:
 
-To learn more about Next.js, take a look at the following resources:
+| Variável | Descrição |
+|---|---|
+| `NEXT_PUBLIC_GA_ID` | ID do Google Analytics 4 (ex.: `G-XXXXXXXXXX`). Analytics só carrega se existir. |
+| `CHAT_PROVIDER` | Provedor do chatbot IA: `anthropic` \| `openai` \| `gemini` |
+| `CHAT_API_KEY` | Chave da IA. **Vazia = modo fallback** (respostas por FAQ/palavras-chave). Nunca vai para o cliente. |
+| `CHAT_MODEL` | Modelo (opcional). Padrões: `claude-3-5-sonnet-20241022`, `gpt-4-turbo-preview`, `gemini-1.5-flash` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Workflow chatbot: publique sem chave (fallback ativo) → adicione as 3 variáveis na Vercel → redeploy → IA ativa sem mudar código.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Funcionalidades
 
-## Deploy on Vercel
+- Home completa (hero, destaques, sobre, depoimentos, galeria, localização, CTA)
+- Cardápio com 27 itens, 6 categorias, filtros por categoria/tags e busca
+- Busca global no header (pratos + páginas, com destaque do termo, atalho `/`)
+- Reservas com validação completa e tela de confirmação (demonstrativo)
+- Chatbot `/api/chat` com 3 provedores de IA + fallback FAQ + rate limit (10/min por IP)
+- Botão flutuante de WhatsApp (número fictício)
+- SEO: metadata por página, Open Graph, sitemap, robots, JSON-LD (Restaurant + Menu)
+- GA4 com eventos (CTAs, reserva enviada, uso do chatbot)
+- Acessibilidade: HTML semântico, foco visível, aria-labels, `prefers-reduced-motion`
+- 404 personalizada
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Identidade visual
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ver **[BRAND.md](./BRAND.md)**: paleta terracota/creme/oliva/dourado, Playfair Display + Inter.
+
+## Decisões de design
+
+- **Tailwind v4**: cores via `@theme` no `globals.css` (não `tailwind.config`) — projetos criados com `create-next-app` atual usam v4 por padrão.
+- **Favicon**: `app/icon.svg` (Next.js serve como `icon.svg`, GP-safe).
+- **`new Date()`**: nunca em Server/prerender — Fixo via `useEffect`/estado (Footer, reservas).
+- **Componentes**: `"use client"` em qualquer componente que use `motion` ou estado, mesmo em páginas server-rendered.
+- **Imagens**: Pexels (licença livre), baixadas e otimizadas em WebP via `scripts/optimize-images.mjs`; créditos em **[CREDITS.md](./CREDITS.md)**.
+- **Idioma**: pt-BR, preços em R$.
+
+## Créditos de imagem
+
+Ver **[CREDITS.md](./CREDITS.md)** — todas as fotos são do Pexels (uso comercial livre).

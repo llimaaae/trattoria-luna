@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
 const galleryImages = [
-  { id: 1, src: "/images/gallery-1.jpg", alt: "Interior acolhedor do restaurante", category: "Ambiente" },
-  { id: 2, src: "/images/gallery-2.jpg", alt: "Prato de pasta fresca artesanal", category: "Pratos" },
-  { id: 3, src: "/images/gallery-3.jpg", alt: "Mesa preparada para jantar especial", category: "Ambiente" },
-  { id: 4, src: "/images/gallery-4.jpg", alt: "Sobremesa italiana tradicional", category: "Sobremesas" },
-  { id: 5, src: "/images/gallery-5.jpg", alt: "Chef preparando massa fresca", category: "Cozinha" },
-  { id: 6, src: "/images/gallery-6.jpg", alt: "Vinhos selecionados", category: "Bebidas" },
+  { id: 1, src: "/images/interior-1.webp", alt: "Salão do restaurante com mesas iluminadas", category: "Ambiente" },
+  { id: 2, src: "/images/pasta-1.webp", alt: "Prato de massa fresca artesanal", category: "Pratos" },
+  { id: 3, src: "/images/table-1.webp", alt: "Mesa preparada para jantar", category: "Ambiente" },
+  { id: 4, src: "/images/dessert-1.webp", alt: "Mesa com sobremesas italianas", category: "Sobremesas" },
+  { id: 5, src: "/images/chef-1.webp", alt: "Chef preparando massa fresca", category: "Cozinha" },
+  { id: 6, src: "/images/wine-1.webp", alt: "Vinhos selecionados à mesa", category: "Bebidas" },
 ];
 
 export default function Gallery() {
@@ -41,8 +40,14 @@ export default function Gallery() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-terracotta/30 to-olive/30 group-hover:opacity-0 transition-smooth" />
-              <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-charcoal/20 transition-smooth" />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-charcoal/25 transition-smooth" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-white text-sm font-semibold px-4 py-2 bg-terracotta/90 rounded-full opacity-0 group-hover:opacity-100 transition-smooth">
                   {image.category}

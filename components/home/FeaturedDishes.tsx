@@ -11,7 +11,8 @@ const featuredDishes = [
     description: "Massa fresca artesanal com molho bolonhesa tradicional, cozido por 6 horas",
     price: "R$ 68,00",
     category: "Massas",
-    image: "/images/tagliatelle.jpg",
+    image: "/images/pasta-1.webp",
+    imageAlt: "Prato de tagliatelle ao ragù com molho bolonhesa",
     dietary: ["Destaque do Chef"],
   },
   {
@@ -20,7 +21,8 @@ const featuredDishes = [
     description: "Jarrete bovino braseado lentamente com risoto açafrão e gremolata",
     price: "R$ 92,00",
     category: "Carnes",
-    image: "/images/ossobuco.jpg",
+    image: "/images/meat-1.webp",
+    imageAlt: "Prato de carne braseada com acompanhamento",
     dietary: ["Prato Especial"],
   },
   {
@@ -29,7 +31,8 @@ const featuredDishes = [
     description: "Burrata artesanal com tomates confitados, manjericão e azeite trufado",
     price: "R$ 54,00",
     category: "Entradas",
-    image: "/images/burrata.jpg",
+    image: "/images/appetizer-1.webp",
+    imageAlt: "Entrada com burrata e tomates frescos",
     dietary: ["Vegetariano"],
   },
 ];
@@ -87,7 +90,14 @@ export default function FeaturedDishes() {
               variants={item}
               className="group bg-cream rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-smooth"
             >
-              <div className="relative h-64 bg-gradient-to-br from-terracotta/10 to-olive/10 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={dish.image}
+                  alt={dish.imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
                 <div className="absolute top-4 right-4 space-y-2">
                   {dish.dietary.map((tag) => (
                     <span

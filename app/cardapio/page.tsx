@@ -175,7 +175,14 @@ export default function MenuPage() {
                         transition={{ duration: 0.5, delay: index * 0.05 }}
                         className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-smooth group"
                       >
-                        <div className="relative h-48 bg-gradient-to-br from-terracotta/10 to-olive/10">
+                        <div className="relative h-48">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
                           {item.tags.length > 0 && (
                             <div className="absolute top-3 right-3 space-y-1 z-10">
                               {item.tags.slice(0, 2).map((tag) => (

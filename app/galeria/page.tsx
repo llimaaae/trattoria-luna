@@ -1,23 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
 const galleryImages = [
-  { id: 1, category: "Ambiente", alt: "Interior acolhedor do restaurante" },
-  { id: 2, category: "Pratos", alt: "Prato de pasta fresca artesanal" },
-  { id: 3, category: "Ambiente", alt: "Mesa preparada para jantar especial" },
-  { id: 4, category: "Sobremesas", alt: "Sobremesa italiana tradicional" },
-  { id: 5, category: "Cozinha", alt: "Chef preparando massa fresca" },
-  { id: 6, category: "Bebidas", alt: "Vinhos selecionados" },
-  { id: 7, category: "Pratos", alt: "Entrada italiana com burrata" },
-  { id: 8, category: "Ambiente", alt: "Detalhes da decoração" },
-  { id: 9, category: "Pratos", alt: "Risoto cremoso com funghi" },
-  { id: 10, category: "Cozinha", alt: "Preparação dos pratos" },
-  { id: 11, category: "Sobremesas", alt: "Tiramisù clássico" },
-  { id: 12, category: "Ambiente", alt: "Vista geral do salão" },
+  { id: 1, src: "/images/interior-1.webp", alt: "Salão do restaurante com mesas iluminadas", category: "Ambiente" },
+  { id: 2, src: "/images/pasta-1.webp", alt: "Prato de massa fresca artesanal", category: "Pratos" },
+  { id: 3, src: "/images/table-1.webp", alt: "Mesa preparada para jantar", category: "Ambiente" },
+  { id: 4, src: "/images/dessert-1.webp", alt: "Sobremesas italianas servidas à mesa", category: "Sobremesas" },
+  { id: 5, src: "/images/chef-1.webp", alt: "Chef preparando massa fresca na cozinha", category: "Cozinha" },
+  { id: 6, src: "/images/wine-1.webp", alt: "Vinhos selecionados à mesa", category: "Bebidas" },
+  { id: 7, src: "/images/appetizer-1.webp", alt: "Entrada com burrata e tomates frescos", category: "Pratos" },
+  { id: 8, src: "/images/interior-2.webp", alt: "Detalhes da decoração do salão", category: "Ambiente" },
+  { id: 9, src: "/images/fish-1.webp", alt: "Prato de peixe grelhado com legumes", category: "Pratos" },
+  { id: 10, src: "/images/meat-1.webp", alt: "Prato de carne braseada com guarnição", category: "Pratos" },
+  { id: 11, src: "/images/dessert-2.webp", alt: "Sobremesa doce com calda", category: "Sobremesas" },
+  { id: 12, src: "/images/pasta-2.webp", alt: "Massa fresca ao molho artesanal", category: "Pratos" },
 ];
 
 const categories = ["Todos", "Ambiente", "Pratos", "Sobremesas", "Cozinha", "Bebidas"];
@@ -79,9 +80,16 @@ export default function GaleriaPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="relative aspect-square bg-gradient-to-br from-terracotta/20 to-olive/20 rounded-lg overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-smooth"
+                  className="relative aspect-square bg-charcoal/5 rounded-lg overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-smooth"
                 >
-                  <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-charcoal/20 transition-smooth" />
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-charcoal/25 transition-smooth" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-white text-sm font-semibold px-4 py-2 bg-terracotta/90 rounded-full opacity-0 group-hover:opacity-100 transition-smooth">
                       {image.category}

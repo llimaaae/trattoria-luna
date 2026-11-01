@@ -15,8 +15,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-terracotta/20 to-olive/20" />
-              {/* Placeholder - real image will be added */}
+              <Image
+                src="/images/chef-1.webp"
+                alt="Chef preparando noodles frescos na cozinha"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
           </motion.div>
 

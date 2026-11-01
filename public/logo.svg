@@ -1,0 +1,15 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Luna crescente -->
+  <circle cx="170" cy="40" r="12" fill="#D4A574"/>
+  <circle cx="166" cy="40" r="10" fill="#F5F1E8"/>
+  
+  <!-- TRATTORIA -->
+  <text x="10" y="35" font-family="serif" font-size="18" font-weight="700" letter-spacing="2" fill="#2D2D2D">
+    TRATTORIA
+  </text>
+  
+  <!-- Luna -->
+  <text x="10" y="55" font-family="serif" font-size="24" font-weight="400" font-style="italic" fill="#C1502E">
+    Luna
+  </text>
+</svg>

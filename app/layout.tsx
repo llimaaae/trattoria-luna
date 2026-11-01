@@ -18,6 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://trattoria-luna.vercel.app"),
   title: "Trattoria Luna | Sabores que atravessam gerações",
   description: "Restaurante italiano autêntico. Receitas tradicionais, ingredientes frescos, ambiente acolhedor. Reserve sua mesa.",
   keywords: ["restaurante italiano", "culinária italiana", "massa artesanal", "Porto Alegre", "trattoria"],

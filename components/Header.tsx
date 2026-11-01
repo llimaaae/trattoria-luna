@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import GlobalSearch from "@/components/GlobalSearch";
 
 const navigation = [
   { name: "Início", href: "/" },
@@ -56,16 +57,18 @@ export default function Header() {
             })}
           </div>
 
-          <div className="hidden md:block">
-            <Link
-              href="/reservas"
-              className="rounded-md bg-terracotta px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta/90 transition-smooth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
-            >
-              Reservar Mesa
-            </Link>
-          </div>
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <GlobalSearch />
+            <div className="hidden md:block">
+              <Link
+                href="/reservas"
+                className="rounded-md bg-terracotta px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-terracotta/90 transition-smooth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              >
+                Reservar Mesa
+              </Link>
+            </div>
 
-          {/* Mobile menu button */}
+            {/* Mobile menu button */}
           <button
             type="button"
             className="md:hidden rounded-md p-2 text-charcoal hover:bg-terracotta/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-terracotta"
@@ -88,6 +91,7 @@ export default function Header() {
               )}
             </svg>
           </button>
+          </div>
         </div>
 
         {/* Mobile menu */}

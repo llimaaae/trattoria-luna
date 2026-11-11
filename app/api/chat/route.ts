@@ -8,8 +8,8 @@ const RATE_LIMIT_MAX = 10;
 const FALLBACK_RESPONSES: Record<string, string> = {
   horario: "Estamos abertos de terça a domingo:\n• Terça a Quinta: 18h-23h\n• Sexta e Sábado: 12h-15h e 18h-00h\n• Domingo: 12h-16h e 18h-22h\n• Segunda: Fechado",
   endereco: "Rua das Acácias, 123 - Moinhos de Vento, Porto Alegre - RS, 90570-000",
-  telefone: "Telefone: (51) 3000-1234\nE-mail: contato@trattorialuna.com.br",
-  reserva: "Para reservar sua mesa, visite nossa página de reservas ou ligue para (51) 3000-1234.",
+  telefone: "Telefone: (00) 00000-0000\nE-mail: contato@trattorialuna.com.br",
+  reserva: "Para reservar sua mesa, visite nossa página de reservas ou ligue para (00) 00000-0000.",
   cardapio: "Confira nosso cardápio completo em /cardapio. Temos entradas, massas, carnes, peixes, risottos e sobremesas autênticas.",
   preco: "Nossos pratos variam entre R$ 22 (sobremesas) e R$ 98 (pratos especiais). Visite o cardápio para detalhes.",
   estacionamento: "Temos convênio com estacionamento próximo. Consulte no local.",
@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
 
 INFORMAÇÕES IMPORTANTES:
 - Endereço: Rua das Acácias, 123 - Moinhos de Vento, Porto Alegre - RS
-- Telefone: (51) 3000-1234
+- Telefone: (00) 00000-0000
 - Horários: Ter-Qui 18h-23h, Sex-Sáb 12h-15h e 18h-00h, Dom 12h-16h e 18h-22h, Segunda fechado
 - Especialidades: Massas frescas artesanais, carnes braseadas, risottos, sobremesas italianas
 - Pratos destacados: Tagliatelle al Ragù (R$ 68), Ossobuco alla Milanese (R$ 92), Tiramisù (R$ 28)

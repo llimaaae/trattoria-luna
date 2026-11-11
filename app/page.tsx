@@ -15,7 +15,7 @@ export default function Home() {
     name: "Trattoria Luna",
     description: "Restaurante italiano autêntico. Receitas tradicionais, ingredientes frescos, ambiente acolhedor.",
     url: "https://trattoria-luna.vercel.app",
-    telephone: "+555130001234",
+    telephone: "+5500000000000",
     email: "contato@trattorialuna.com.br",
     servesCuisine: ["Italiana", "Massas frescas"],
     priceRange: "R$$",

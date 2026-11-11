@@ -71,8 +71,8 @@ export default function ContatoPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-charcoal mb-2">Telefone</h3>
-                      <a href="tel:+555130001234" className="text-charcoal/70 hover:text-terracotta transition-smooth">
-                        (51) 3000-1234
+                      <a href="tel:+5500000000000" className="text-charcoal/70 hover:text-terracotta transition-smooth">
+                        (00) 00000-0000
                       </a>
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function ContatoPage() {
                       </svg>
                     </a>
                     <a
-                      href="https://wa.me/555130001234"
+                      href="https://wa.me/5500000000000"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-charcoal/5 hover:bg-[#25D366] rounded-full flex items-center justify-center text-charcoal hover:text-white transition-smooth"
@@ -192,7 +192,7 @@ export default function ContatoPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+555130001234"
+                href="tel:+5500000000000"
                 className="inline-flex items-center justify-center rounded-md bg-terracotta px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-terracotta/90 transition-smooth"
               >
                 Ligar Agora

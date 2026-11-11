@@ -99,8 +99,8 @@ export default function Footer() {
               <p>Rua das Acácias, 123</p>
               <p>Moinhos de Vento, Porto Alegre - RS</p>
               <p>
-                <a href="tel:+555130001234" className="hover:text-gold transition-smooth">
-                  (51) 3000-1234
+                <a href="tel:+5500000000000" className="hover:text-gold transition-smooth">
+                  (00) 00000-0000
                 </a>
               </p>
               <p>

@@ -63,7 +63,7 @@ export default function ChatWidget() {
         ...prev,
         {
           role: "assistant",
-          content: "Desculpe, houve um erro. Tente novamente ou ligue (51) 3000-1234.",
+          content: "Desculpe, houve um erro. Tente novamente ou ligue (00) 00000-0000.",
         },
       ]);
     } finally {
@@ -198,7 +198,7 @@ export default function ChatWidget() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
-        href="https://wa.me/555130001234"
+        href="https://wa.me/5500000000000"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-24 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#128C7E] transition-smooth flex items-center justify-center"

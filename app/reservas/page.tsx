@@ -268,7 +268,7 @@ export default function ReservationPage() {
                   className={`w-full px-4 py-3 rounded-md border ${
                     errors.phone ? "border-red-500" : "border-charcoal/20"
                   } focus:outline-none focus:ring-2 focus:ring-terracotta focus:border-transparent transition-smooth`}
-                  placeholder="(51) 99999-9999"
+                  placeholder="(00) 00000-0000"
                 />
                 {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
               </div>
@@ -376,7 +376,7 @@ export default function ReservationPage() {
 
             <div className="mt-8 pt-6 border-t border-charcoal/10">
               <p className="text-sm text-charcoal/60 mb-6">
-                * Campos obrigatórios. Reservas para grupos acima de 12 pessoas, entre em contato pelo telefone (51) 3000-1234.
+                * Campos obrigatórios. Reservas para grupos acima de 12 pessoas, entre em contato pelo telefone (00) 00000-0000.
               </p>
               <button
                 type="submit"
@@ -391,8 +391,8 @@ export default function ReservationPage() {
             <p className="text-charcoal/70 mb-4">Precisa fazer uma alteração?</p>
             <p className="text-sm text-charcoal/60">
               Entre em contato:{" "}
-              <a href="tel:+555130001234" className="text-terracotta hover:underline font-semibold">
-                (51) 3000-1234
+              <a href="tel:+5500000000000" className="text-terracotta hover:underline font-semibold">
+                (00) 00000-0000
               </a>{" "}
               ou{" "}
               <a href="mailto:contato@trattorialuna.com.br" className="text-terracotta hover:underline font-semibold">
